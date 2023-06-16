@@ -1,0 +1,53 @@
+<p-toast></p-toast>
+
+<form [formGroup]="form" novalidate (ngSubmit)="onSubmit()" class="p-3 bg-faded">
+<h1 class="text-center"> Creando coche</h1>
+  <div class="grid p-5">
+    <div class="col-6">
+      <div class="flex flex-column gap-2">
+        <label class="mb-2" [style]="{'font-weight': 'bold'}">Codigo </label>
+        <div class="p-inputgroup my-1">
+          <span class="p-inputgroup-addon"><i class="pi pi-bookmark-fill" style="color:#f16357;"></i></span>
+          <input type="text" pInputText formControlName="codigo" placeholder="Escribe aqui el codigo">
+        </div>
+      </div>
+    </div>
+
+    <div class="col-6">
+      <div class="flex flex-column gap-2">
+        <label class="mb-2" [style]="{'font-weight': 'bold'}">Modelo </label>
+        <div class="p-inputgroup my-1">
+          <span class="p-inputgroup-addon"><i class="pi pi-bookmark-fill" style="color:#f16357;"></i></span>
+          <input type="text" pInputText formControlName="modelo" placeholder="Escribe aqui el modelo">
+        </div>
+      </div>
+    </div>
+
+    <div class="col-6">
+      <div class="flex flex-column gap-2">
+        <label class="mb-2" [style]="{'font-weight': 'bold'}">Color </label>
+        <div class="p-inputgroup my-1">
+          <span class="p-inputgroup-addon"><i class="pi pi-bookmark-fill" style="color:#f16357;"></i></span>
+          <input type="text" pInputText formControlName="color" placeholder="Escribe aqui el color">
+        </div>
+      </div>
+    </div>
+
+    <div class="col-6">
+
+      <div class="flex flex-column gap-2">
+        <label class="mb-2" [style]="{'font-weight': 'bold'}">Pvc </label>
+        <div class="p-inputgroup my-1">
+          <span class="p-inputgroup-addon"><i class="pi pi-bookmark-fill" style="color:#f16357;"></i></span>
+          <input type="number" pInputText formControlName="pvc" placeholder="Escribe aqui el PVC">
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12 flex justify-content-center">
+      <button pButton pRipple type="submit" icon="pi pi-check" label="Guardar" class="p-button-success mx-2" [disabled]="!form.valid"></button>
+
+      <button pButton pRipple type="button" icon="pi pi-times" label="Cancelar" class="p-button-danger mx-2" (click)="cancel()"></button>
+    </div>
+  </div>
+</form>

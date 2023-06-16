@@ -1,0 +1,84 @@
+
+<p-toast></p-toast>
+
+<form [formGroup]="form" novalidate (ngSubmit)="onSubmit()" class="p-3 bg-faded">
+<h1 class="text-center"> Actualizando venta</h1>
+  <div class="grid p-5">
+    <div class="col-6">
+      <div class="flex flex-column gap-2">
+        <label class="mb-2" [style]="{'font-weight': 'bold'}">Fecha </label>
+        <div class="p-inputgroup my-1">
+          <span class="p-inputgroup-addon"><i class="pi pi-bookmark-fill" style="color:#f16357;"></i></span>
+          <input type="text" pInputText formControlName="fechaVenta" placeholder="Escribe aqui la fecha de la venta">
+        </div>
+      </div>
+    </div>
+
+    <div class="col-3">
+      <div class="flex flex-column gap-2">
+        <label class="mb-2" [style]="{'font-weight': 'bold'}">SubTotal </label>
+        <div class="p-inputgroup my-1">
+          <span class="p-inputgroup-addon"><i class="pi pi-bookmark-fill" style="color:#f16357;"></i></span>
+          <input type="number" pInputText formControlName="subtotalVenta" placeholder="Escriba el subTotal">
+        </div>
+      </div>
+    </div>
+    <div class="col-3">
+      <div class="flex flex-column gap-2">
+        <label class="mb-2" [style]="{'font-weight': 'bold'}">Total </label>
+        <div class="p-inputgroup my-1">
+          <span class="p-inputgroup-addon"><i class="pi pi-bookmark-fill" style="color:#f16357;"></i></span>
+          <input type="number" pInputText formControlName="totalVenta" placeholder="Escriba el total" >
+        </div>
+      </div>
+    </div>
+
+    <div class="col-6">
+      <div class="flex flex-column gap-2">
+        <label class="mb-2" [style]="{'font-weight': 'bold'}">Impuestos </label>
+        <div class="p-inputgroup my-1">
+          <span class="p-inputgroup-addon"><i class="pi pi-bookmark-fill" style="color:#f16357;"></i></span>
+          <input type="number" pInputText formControlName="impuestosVenta" placeholder="Escriba aca el total de impuestos">
+        </div>
+      </div>
+    </div>
+
+    <div class="col-6">
+
+      <div class="flex flex-column gap-2">
+        <label class="mb-2" [style]="{'font-weight': 'bold'}">Descuento </label>
+        <div class="p-inputgroup my-1">
+          <span class="p-inputgroup-addon"><i class="pi pi-bookmark-fill" style="color:#f16357;"></i></span>
+          <input type="number" pInputText formControlName="descuentosVenta" placeholder="Escriba el descuento" >
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="col-6">
+      <div class="flex flex-column gap-2">
+        <label class="mb-2" [style]="{'font-weight': 'bold'}">Clientes </label>
+        <div class="p-inputgroup my-1">
+          <span class="p-inputgroup-addon"><i class="pi pi-bookmark-fill" style="color:#f16357;"></i></span>
+          <p-dropdown [style]="{'width': '100%'}" placeholder="Selecciona un cliente" formControlName="clienteId" [options]="clientes" optionLabel="nombre"></p-dropdown>
+        </div>
+      </div>
+    </div>
+    <div class="col-6">
+      <div class="flex flex-column gap-2">
+        <label class="mb-2" [style]="{'font-weight': 'bold'}">Coches </label>
+        <div class="p-inputgroup my-1">
+          <span class="p-inputgroup-addon"><i class="pi pi-bookmark-fill" style="color:#f16357;"></i></span>
+          <p-dropdown [style]="{'width': '100%'}" placeholder="Selecciona un coche" formControlName="cocheId" [options]="coches" optionLabel="modelo"></p-dropdown>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12 flex justify-content-center">
+      <button pButton pRipple type="submit" icon="pi pi-check" label="Guardar" class="p-button-success mx-2" [disabled]="!form.valid"></button>
+
+      <button pButton pRipple type="button" icon="pi pi-times" label="Cancelar" class="p-button-danger mx-2" (click)="cancel()"></button>
+    </div>
+  </div>
+</form>

@@ -1,0 +1,75 @@
+<p-toast></p-toast>
+
+<form [formGroup]="form" novalidate (ngSubmit)="onSubmit()" class="p-3 bg-faded">
+<h1 class="text-center"> Creando cliente</h1>
+  <div class="grid p-5">
+    <div class="col-6">
+      <div class="flex flex-column gap-2">
+        <label class="mb-2" [style]="{'font-weight': 'bold'}">Cedula </label>
+        <div class="p-inputgroup my-1">
+          <span class="p-inputgroup-addon"><i class="pi pi-bookmark-fill" style="color:#f16357;"></i></span>
+          <input type="text" pInputText formControlName="cedula" placeholder="Escribe aqui tu cedula">
+        </div>
+      </div>
+    </div>
+
+    <div class="col-6">
+      <div class="flex flex-column gap-2">
+        <label class="mb-2" [style]="{'font-weight': 'bold'}">Nombres </label>
+        <div class="p-inputgroup my-1">
+          <span class="p-inputgroup-addon"><i class="pi pi-bookmark-fill" style="color:#f16357;"></i></span>
+          <input type="text" pInputText formControlName="nombre" placeholder="Escribe aqui tus nombres">
+        </div>
+      </div>
+    </div>
+
+    <div class="col-6">
+      <div class="flex flex-column gap-2">
+        <label class="mb-2" [style]="{'font-weight': 'bold'}">Apellidos </label>
+        <div class="p-inputgroup my-1">
+          <span class="p-inputgroup-addon"><i class="pi pi-bookmark-fill" style="color:#f16357;"></i></span>
+          <input type="text" pInputText formControlName="apellido" placeholder="Escribe aqui tus apellidos">
+        </div>
+      </div>
+    </div>
+
+    <div class="col-6">
+
+      <div class="flex flex-column gap-2">
+        <label class="mb-2" [style]="{'font-weight': 'bold'}">Dirección </label>
+        <div class="p-inputgroup my-1">
+          <span class="p-inputgroup-addon"><i class="pi pi-bookmark-fill" style="color:#f16357;"></i></span>
+          <input type="text" pInputText formControlName="direccion" placeholder="Escribe aqui tu dirección">
+        </div>
+      </div>
+    </div>
+
+
+    <div class="col-6">
+      <div class="flex flex-column gap-2">
+        <label class="mb-2" [style]="{'font-weight': 'bold'}">Ciudad </label>
+        <div class="p-inputgroup my-1">
+          <span class="p-inputgroup-addon"><i class="pi pi-bookmark-fill" style="color:#f16357;"></i></span>
+          <input type="text" pInputText formControlName="ciudad" placeholder="Escribe aqui tu ciudad">
+        </div>
+      </div>
+    </div>
+
+    <div class="col-6">
+      <div class="flex flex-column gap-2">
+        <label class="mb-2" [style]="{'font-weight': 'bold'}">Codigo cliente </label>
+        <div class="p-inputgroup my-1">
+          <span class="p-inputgroup-addon"><i class="pi pi-bookmark-fill" style="color:#f16357;"></i></span>
+          <input type="number" pInputText formControlName="codigoCliente" placeholder="Escribe aqui el codigo del cliente"
+            title="codigoCliente">
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12 flex justify-content-center">
+      <button pButton pRipple type="submit" icon="pi pi-check" label="Guardar" class="p-button-success mx-2" [disabled]="!form.valid"></button>
+
+      <button pButton pRipple type="button" icon="pi pi-times" label="Cancelar" class="p-button-danger mx-2" (click)="cancel()"></button>
+    </div>
+  </div>
+</form>
